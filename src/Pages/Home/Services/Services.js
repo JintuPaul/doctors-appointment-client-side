@@ -10,19 +10,19 @@ const Services = () => {
             id:1,
             name: 'Fluoride Treatment',
             img: fluoride,
-            title: "Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the"
+            title: "At keep smile hospital, we prioritize your dental health and strive to provide comprehensive care to help you maintain a beautiful smile."
         },
         {
             id:2,
             name: 'Cavity Filling',
             img: cavity,
-            title: "Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the"
+            title: "If you're experiencing tooth pain or sensitivity, it may be a sign of a cavity. At keep smile hospital, we specialize in expert cavity filling procedures to restore the health and beauty of your teeth"
         },
         {
             id:3,
             name: 'Teeth Whitening',
             img: teeth,
-            title: "Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the"
+            title: "If you're looking to enhance your smile and restore its natural radiance, professional teeth whitening at keep smile hospital is the answer. Our dental experts understand the impact of a bright, white smile on your confidence and self-esteem."
         }
     ]
     return (

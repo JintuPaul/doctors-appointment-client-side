@@ -1,13 +1,14 @@
 import React from 'react';
 import banner from '../../../assets/images/chair.png'
 import './banner.css'
+import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 justify-center py-20 items-center'>
             <div className=''>
-                <h1 className='text-5xl'>Your New Smile Starts <br /> Here</h1>
-                <p className='mt-4 mb-6'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-                <button className="py-2 px-4 text-white text-xl font-semibold mb-4 banner-btn">Get started</button>
+                <h1 className='text-5xl font-[emoji] font-semibold'>Your New Smile Starts <br /> Here</h1>
+                <p className='mt-4 mb-6 text-lg mr-5 font-[sans-serif]'>At Keep smile hospital, we understand the importance of a confident and radiant smile. That's why we're dedicated to providing exceptional dental care that will give you the smile you've always dreamed of. With our state-of-the-art facilities and experienced team of dental professionals, we're here to transform your dental health and enhance your overall well-being.</p>
+                <Link to='/appointment' className="py-2 px-4 text-start text-white text-xl font-semibold mb-4 banner-btn">Get Booking</Link>
             </div>
             <div>
                 <img src={banner} alt="" />

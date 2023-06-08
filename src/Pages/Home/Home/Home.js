@@ -6,10 +6,12 @@ import MakeAppointment from '../MakeAppointment/MakeAppointment';
 import Services from '../Services/Services';
 import Terms from '../Terms/Terms';
 import Testimonial from '../Testimonial/Testimonial';
+import Slider from '../Slider/Slider';
 
 const Home = () => {
     return (
         <div>
+            <Slider/>
             <Banner></Banner>
             <InfoItems></InfoItems>
             <Services></Services>
