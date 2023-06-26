@@ -13,7 +13,7 @@ const AppointmentOption = ({ appointmentOptions, setTreatment }) => {
       <p className="mb-3">
         {slots.length} {slots.length > 1 ? "spaces" : "space"} available
       </p>
-      {/* <p><small>price: ${price}</small></p> */}
+      <p className="text-lg">price: <small className="text-sky-400 font-bold">${price}</small></p>
       <button>
         <label
           disabled={slots.length === 0}

@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useToken from '../../Hooks/useToken';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -10,21 +11,35 @@ const Login = () => {
     const location = useLocation()
     const navigate = useNavigate()
     const [loginUserEmail, setLoginUserEmail] = useState('')
+    const [loginError, setLoginError] = useState('')
     const [token] = useToken(loginUserEmail)
     const from = location.state?.from?.pathname || '/'
-    if(token){
-        navigate(from, {replace: true})
-    }
+    // if(token){
+    //     navigate(from, {replace: true})
+    // }
     const handleLogin = data => {
-        console.log(data)
+    
         signIn(data.email, data.password)
         .then(result => {
             const user = result.user;
-            setLoginUserEmail(data.email)
+            toast.success('login successfully...')
+            getUserToken(data.email)
 
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            setLoginError(error.message)
+        })
     }
+    const getUserToken = email =>{
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+        .then(res => res.json())
+        .then(data =>{
+            if(data.accessToken){
+                localStorage.setItem('accessToken', data.accessToken)
+                navigate(from, {replace: true})
+            }
+        })
+      }
     return (
         <div className='h-[600px] items-center justify-center flex'>
            <div className='w-96 shadow-xl py-16 px-5 rounded-xl'>
@@ -50,9 +65,9 @@ const Login = () => {
                 </div>
 
                 <input className='rounded-xl py-2 px-5 bg-slate-700 w-full text-white font-semibold cursor-pointer'  value='Login' type="submit" />
-                {/* {loginError && <p className='text-red-500'>{loginError}</p>} */}
+                {loginError && <p className='text-red-500'>{loginError}</p>}
             </form>
-            <p className='text-lg mb-2 mt-5'>New to Doctors Portal? <Link to ='/register' className='text-primary underline'>Create an account</Link></p>
+            <p className='text-lg mb-2 mt-5'>New to KeepSmile? <Link to ='/register' className='text-primary underline'>Create an account</Link></p>
             <div className=' divider'>OR</div>
             <button className='bg-white btn w-full text-center rounded-lg py-2 px-5 mt-4 btn-outline'>Continue with Google</button>
            </div>

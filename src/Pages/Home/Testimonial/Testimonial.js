@@ -29,8 +29,8 @@ const Testimonial = () => {
         }
     ]
     return (
-        <section>
-            <div className='flex justify-between items-center'>
+        <section className='m-auto max-w-[1280px]'>
+            <div className='flex justify-between items-center mx-6 lg:mx-0'>
                 <div>
                     <h2 className='text-sky-500 font-bold text-lg'>Testimonial</h2>
                     <h1 className='text-5xl font-[emoji] font-semibold'>What Our Patients Says</h1>

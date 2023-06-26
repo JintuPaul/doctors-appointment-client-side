@@ -21,7 +21,7 @@ const Slider = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <>
+    <div className="m-auto max-w-[1280px]">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -59,7 +59,7 @@ const Slider = () => {
           <span ref={progressContent}></span>
         </div>
       </Swiper>
-    </>
+    </div>
   );
 };
 

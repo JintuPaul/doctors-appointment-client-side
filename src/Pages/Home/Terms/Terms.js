@@ -1,24 +1,19 @@
 import React from "react";
-import treatment from "../../../assets/images/treatment.png";
+import treatment from "../../../assets/images/images.png";
+import './terms.css'
+import { Link } from "react-router-dom";
 const Terms = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center py-16 gap-10">
+    <div className="grid terms grid-cols-1 lg:grid-cols-2 items-center justify-center py-28 my-20 gap-10">
       <div>
         <img src={treatment} alt="" />
       </div>
-      <div>
-        <h1 className="text-4xl">Exceptional Dental Care, on Your Terms</h1>
-        <p className="my-8">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsumis that it has a more-or-less normal distribution of
-          letters,as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page
+      <div className="mx-6 lg:mx-0">
+        <h1 className="text-5xl font-[emoji] font-semibold text-white">Working Schedule & <br /> Booking Management</h1>
+        <p className="my-10 text-slate-200 text-lg mr-8 font-[sans-serif] text-justify">
+        At Keep smile hospital, we understand the importance of convenience and flexibility when it comes to scheduling dental appointments. We have carefully crafted our working schedule to accommodate the needs of our patients. Our dedicated team of dental professionals is available to serve you during the following hours:
         </p>
-        <button className="py-2 px-4 text-white text-xl font-semibold mb-4 banner-btn">
-          Get booking
-        </button>
+        <Link to='/appointment' className="py-2 px-4 text-start text-white text-xl font-semibold mb-4 banner-btn">Get Booking</Link>
       </div>
     </div>
   );

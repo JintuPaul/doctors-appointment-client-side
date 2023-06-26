@@ -14,15 +14,15 @@ const SignUp = () => {
     const [createUserEmail, setCreateUserEmail] = useState('')
     const [token] = useToken(createUserEmail)
 
-    if(token){
-        navigate('/')
-    }
+    // if(token){
+    //     navigate('/')
+    // }
     const handleSignup = (data) => {
         setSignUpError("")
         createUser(data.email, data.password)
         .then(res => {
             const user = res.user;
-            console.log(user)
+          
             toast("signUp Successfully....")
             const userInfo = {
                 displayName: data.name
@@ -34,7 +34,6 @@ const SignUp = () => {
             .catch(err => console.log(err))
         })
         .catch(error => {
-            console.log(error)
             setSignUpError(error.message)
         })
     }
@@ -49,13 +48,22 @@ const SignUp = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            setCreateUserEmail(email)
+            getUserToken(email)
           })
           .catch((error) => {
             console.error('Error:', error);
           });
       };
-
+      const getUserToken = email =>{
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+        .then(res => res.json())
+        .then(data =>{
+            if(data.accessToken){
+                localStorage.setItem('accessToken', data.accessToken)
+                navigate('/')
+            }
+        })
+      }
       
     return (
         <div className='h-[600px] items-center justify-center flex'>

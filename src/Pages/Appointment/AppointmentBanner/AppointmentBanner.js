@@ -5,7 +5,7 @@ import banner from '../../../assets/images/chair.png'
 const AppointmentBanner = ({selectedDate, setSelectedDate}) => {
    
     return (
-        <div>
+        <div className='m-auto max-w-[1280px]'>
             <div className='grid grid-cols-1 lg:grid-cols-2 justify-center py-20 items-center'>
             <div className=''>
             <DayPicker 

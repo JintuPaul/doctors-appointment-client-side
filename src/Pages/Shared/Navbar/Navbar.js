@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
-
+import logo from '../../../assets/icons/Keep Smile.png'
+import './navbar.css'
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
@@ -12,26 +13,26 @@ const Navbar = () => {
   const menuItems = (
     <React.Fragment>
       <li>
-        <Link to="/">Home</Link>
+        <Link className="font-[sans-serif] text-[17px] text-[#454546] font-medium" to="/">Home</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link className="font-[sans-serif] text-[17px] text-[#454546] font-medium" to="/about">About</Link>
       </li>
       <li>
-        <Link to="/appointment">Appointment</Link>
+        <Link className="font-[sans-serif] text-[17px] text-[#454546] font-medium" to="/appointment">Appointment</Link>
       </li>
       {user?.uid ? (
         <>
           <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link className="font-[sans-serif] text-[17px] text-[#454546] font-medium" to="/dashboard">Dashboard</Link>
           </li>
           <li>
-            <button onClick={handleLogOut}> Login out</button>
+            <button className="btn btn-ghost font-semibold" onClick={handleLogOut}> Login out</button>
           </li>
         </>
       ) : (
         <li>
-          <Link to="/login">Login</Link>
+          <Link className="btn btn-ghost font-semibold" to="/login">Login</Link>
         </li>
       )}
     </React.Fragment>
@@ -64,15 +65,15 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
-          Doctor Portal
+        <Link to="/" className="logo">
+          <p className="logo-text"><span className=" font-[sans-serif] text-[36px]">K</span>eep<span className=" font-[sans-serif] text-[36px]">S</span>mile</p>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
       <div className="navbar-end">
-        {/* <Link className="text-white py-2 bg-orange-500 px-4 font-semibold text-xl banner-btn">Get booking</Link> */}
+        {/* <Link className="text-white py-2 bg-orange-500 px-4 font-medium text-xl banner-btn">Get booking</Link> */}
       </div>
       <label
         htmlFor="dashboard-drawer"

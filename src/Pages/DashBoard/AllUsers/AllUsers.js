@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useQuery } from 'react-query';
+import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 
 const AllUsers = () => {
+    const [deletingDoctor, setDeletingDoctor] = useState(null);
+    const closeModal = () => {
+        setDeletingDoctor(null);
+      };
     const {data: users = [], refetch} = useQuery({
         queryKey: ['users'],
         queryFn: async() => {
@@ -15,21 +20,35 @@ const AllUsers = () => {
         fetch(`http://localhost:5000/users/admin/${id}`, {
             method: 'PUT',
             headers: {
-                authorization: `bearer ${localStorage.getItem('accessToken')}`
-            }
+              authorization: `bearer ${localStorage.getItem("accessToken")}`,
+            },
         })
         .then(res => res.json())
         .then(data => {
             if(data.modifiedCount > 0){
-                toast.success('make admin successfully...')
+                toast.success('make admin successfully')
                 refetch()
             }
         })
     }
-    
+    const handleDeleteUsers = (user) => {
+        fetch(`http://localhost:5000/users/${user._id}`, {
+          method: "DELETE",
+          headers: {
+            authorization: `bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              refetch();
+              toast.success(`Users ${user.name} deleted successfully`);
+            }
+          });
+      };
     return (
         <div>
-            <h3 className='text-3xl font-semibold mb-5'>my appointment</h3>
+            <h4 className='text-3xl font-semibold my-5'>All Users</h4>
 
             <div className="overflow-x-auto">
             <table className="table w-full">
@@ -57,12 +76,30 @@ const AllUsers = () => {
                                 }
                             </td>
                             
-                            <td><button className="btn btn-sm text-sm bg-red-500">Delete</button></td>
+                            <td>
+                    <label
+                      onClick={() => handleDeleteUsers(user)}
+                      htmlFor="confirmationModal"
+                      className="btn btn-sm btn-error"
+                    >
+                      Delete
+                    </label>
+                  </td>
                         </tr>)
                     }
                 </tbody>
-            </table>
+            </table>  
         </div>
+        {deletingDoctor && (
+        <ConfirmationModal
+          title={"are you sure you want to delete"}
+          message={`if you delete ${deletingDoctor.name} if can't undone`}
+          closeModal={closeModal}
+          successAction={handleDeleteUsers}
+          successDeleteButton="delete"
+          modalData={deletingDoctor}
+        ></ConfirmationModal>
+      )}
         </div>
     );
 };

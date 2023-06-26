@@ -1,0 +1,63 @@
+[
+    {
+        "_id": 1,
+        "name": "Tooth Decay",
+        "banner_img": "https://i.ibb.co/VMnCr4h/facebook-banner.png",
+        "img": "https://i.ibb.co/zVHG6Gh/New-Project.png",
+        "details": "Tooth decay, also known as dental caries or cavities, occurs when bacteria in the mouth produce acids that erode the tooth enamel. This can result in the formation of small holes or cavities in the teeth. Prevention methods include:",
+        "exp":"Brushing your teeth at least twice a day with fluoride toothpaste to remove plaque and bacteria.",
+        "exp1":"Flossing daily to clean between teeth and remove plaque and food particles.",
+        "exp2":"Limiting the consumption of sugary and acidic foods and beverages, as they contribute to tooth decay.",
+        "exp3": "Using fluoride mouth rinses or gels as recommended by your dentist to strengthen tooth enamel.",
+        "exp4":"Regular dental check-ups and professional cleanings to detect and treat cavities early."
+    },
+    {
+        "_id": 2,
+        "name": "Gum Disease",
+        "banner_img": "https://i.ibb.co/Lrsshpp/bleaching-banner.jpg",
+        "img": "https://i.ibb.co/ZgmvwyC/New-Project-1.png",
+        "details": "Gum disease refers to infections of the tissues surrounding and supporting the teeth. It is caused by the buildup of plaque on the teeth and along the gumline. There are two main stages of gum disease: gingivitis (mild) and periodontitis (advanced). Prevention methods include:",
+        "exp":"Practicing good oral hygiene by brushing your teeth twice a day and flossing daily.",
+        "exp1":"Using an antimicrobial mouthwash to reduce bacterial plaque.",
+        "exp2":"Eating a balanced diet that is low in sugary and starchy foods.",
+        "exp3": "Avoiding tobacco products, as they increase the risk of gum disease.",
+        "exp4":"Regular dental check-ups for professional cleanings and early detection of gum disease."
+    },
+
+    {
+        "_id": 3,
+        "name": "Tooth Sensitivity",
+        "img": "https://i.ibb.co/bL27XRz/New-Project-2.png",
+        "banner_img": "https://i.ibb.co/4gQmDcJ/Teeth-whitening-banner.png",
+        "details": "Tooth sensitivity occurs when the tooth enamel wears down, exposing the underlying dentin and nerve endings, leading to pain or discomfort when exposed to hot, cold, sweet, or acidic substances. Prevention methods include:",
+        "exp":"Using a soft-bristled toothbrush and gentle brushing technique to avoid enamel erosion.",
+        "exp1":"Using toothpaste formulated for sensitive teeth, which contains desensitizing agents.",
+        "exp2":"Avoiding highly acidic foods and beverages that can further erode enamel.",
+        "exp3": "Limiting teeth grinding or clenching, which can cause tooth sensitivity.",
+        "exp4":"Seeking dental treatment for underlying causes, such as gum recession or tooth decay, that contribute to sensitivity."
+    },
+    {
+        "_id": 4,
+        "name": "Oral Cancer",
+        "img": "https://i.ibb.co/pd5Ww2q/New-Project-4.png",
+        "banner_img": "https://i.ibb.co/y8ZRsTq/teeth-whitening-patient-smiling-1.jpg",
+        "details": "Oral cancer refers to the abnormal growth of cells in the mouth, including the lips, tongue, cheeks, floor of the mouth, and throat. Prevention methods include:",
+        "exp":"Avoiding tobacco use in any form, including smoking and chewing tobacco.",
+        "exp1":"Limiting alcohol consumption, as excessive alcohol use is a risk factor for oral cancer.",
+        "exp2":"Protecting the lips from excessive sun exposure by wearing lip balm with sunscreen or a wide-brimmed hat.",
+        "exp3": "Performing regular self-examinations to detect any changes in the mouth, such as unusual sores or lesions.",
+        "exp4":"Regular dental check-ups that include oral cancer screenings for early detection and treatment."
+    },
+    {
+        "_id": 5,
+        "name": "Tooth Loss",
+        "img": "https://i.ibb.co/QN2JnLB/New-Project-3.png",
+        "banner_img": "https://i.ibb.co/B6vbnNC/Durdental-bleichung01.png",
+        "details": "Tooth loss can occur due to various reasons, including tooth decay, gum disease, trauma, or genetic factors. Prevention methods include:",
+        "exp":"Practicing good oral hygiene by brushing and flossing regularly to prevent tooth decay and gum disease.",
+        "exp1":"Wearing a mouthguard during sports activities to protect teeth from injury.",
+        "exp2":"Avoiding habits like smoking and excessive alcohol consumption, as they can contribute to tooth loss.",
+        "exp3": "Seeking prompt dental care for any dental issues or injuries to prevent further damage.",
+        "exp4":"Regular dental check-ups to monitor the health of your teeth and gums and address any potential problems early."
+    }
+]

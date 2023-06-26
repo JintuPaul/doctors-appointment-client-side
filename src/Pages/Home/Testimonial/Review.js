@@ -3,9 +3,9 @@ import React from 'react';
 const Review = ({review}) => {
     const {img, name, title, description} = review
     return (
-        <div className='shadow-2xl p-4'>
+        <div className='shadow-2xl p-4 m-auto max-w-[1280px] mx-6 lg:mx-0'>
             <p>{description}</p>
-            <div className='flex items-center mt-4'>
+            <div className='flex items-center mt-4 '>
                 <div>
                 <img className='' src={img} alt="" />
                 </div>

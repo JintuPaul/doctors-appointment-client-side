@@ -29,13 +29,15 @@ const InfoItems = () => {
         },
     ]
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 py-10'>
+        <div className='m-auto max-w-[1280px]'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 py-10'>
            {
                 infoCards.map(info => <InfoCards
                     info={info}
                     key={info.id}
                 ></InfoCards>)
            }
+        </div>
         </div>
     );
 };

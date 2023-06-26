@@ -1,10 +1,11 @@
 import React from "react";
 import appointment from "../../../assets/images/appointment.png";
 import doctor from "../../../assets/images/doctor-small.png";
+import { Link } from "react-router-dom";
 const MakeAppointment = () => {
   return (
     <section
-      className=""
+      className=" my-20"
       style={{
         background: `url(${appointment})`,
       }}
@@ -13,19 +14,21 @@ const MakeAppointment = () => {
         <div>
           <img className=" -mt-32" src={doctor} alt="" />
         </div>
-        <div>
-          <h3 className="text-lg font-bold text-sky-500">Appointment</h3>
-          <p className="text-white my-5">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsumis that it has a more-or-less normal
-            distribution of letters,as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page
+        <div className="mx-6 lg:mx-0 pb-10 lg:pb-0">
+          <h3 className="text-xl font-bold text-sky-500">Appointment</h3>
+          <p className="my-8 text-slate-200 text-lg mr-8 font-[sans-serif] text-justify">
+            At Keep smile hospital, we understand the importance of convenience
+            and flexibility when it comes to scheduling dental appointments. We
+            have carefully crafted our working schedule to accommodate the needs
+            of our patients. Our dedicated team of dental professionals is
+            available to serve you during the following hours:
           </p>
-          <button className="py-2 px-4 text-white text-xl font-semibold mb-4 banner-btn">
-            Get booking
-          </button>
+          <Link
+            to="/appointment"
+            className="py-2 px-4 text-start text-white text-xl font-semibold mb-4 banner-btn"
+          >
+            Get Booking
+          </Link>
         </div>
       </div>
     </section>

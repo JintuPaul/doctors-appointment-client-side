@@ -30,7 +30,7 @@ const AvailableAppointments = ({selectedDate}) => {
     //     })
     // }, [])
     return (
-        <div>
+        <div className='m-auto max-w-[1280px]'>
             <h2 className='text-center font-bold text-sky-400 text-lg'>Available Appointments {format (selectedDate, "PP")}</h2>
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 py-10'>
